@@ -8,7 +8,7 @@ import {
   Link,
 } from "@chakra-ui/react";
 
-const Card= ({title,content,upVoteCount,data}) => {
+const Card= ({title,content,upVoteCount,data,url}) => {
   return (
     <Flex
    
@@ -49,7 +49,7 @@ const Card= ({title,content,upVoteCount,data}) => {
               fontSize="2xl"
               mt={2}
               _hover={{ color: "gray.600", textDecor: "underline" }}
-              href="#"
+              href={url}
             >
               {title}
             </Link>
