@@ -8,12 +8,15 @@ import {
   Link,
   Text,
 } from "@chakra-ui/react";
+import {SiDatadog} from "react-icons/si"
 
 const Card= ({title,content,upVoteCount,data,url}) => {
   
   let section = data.sectionUrl.split('.com/')[1].split('/')[0]
+  let postIdArray = data.url.split('/');
+  let id = postIdArray[postIdArray.length-1]
   return (
-    <Link>
+    <Link href={"/post" + "?id=" + id + "&title=" + title }>
     <>
     <Flex
    
@@ -67,17 +70,10 @@ const Card= ({title,content,upVoteCount,data,url}) => {
             >
             </chakra.p>
           </Box>
-
           <Box mt={4}>
             <Flex alignItems="center">
               <Flex alignItems="center">
-                <Image
-                  h={10}
-                  fit="cover"
-                  rounded="full"
-                  src="https://images.unsplash.com/photo-1586287011575-a23134f797f9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=48&q=60"
-                  alt="Avatar"
-                />
+                <SiDatadog color ="gray" />
                 <Text
                   mx={2}
                   fontWeight="bold"

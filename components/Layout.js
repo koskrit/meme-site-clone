@@ -73,7 +73,7 @@ export default function Layout({ children }) {
                <SideMenuLeft />
             </Box>
             <Box  width="full" pl = {["10px","10px","150px","200px"]} pr={["10px","10px","250px","300px"]}>
-               <Content/>
+               {children}
             </Box>
             <Box w={["0px","0px","250px","300px"]} position="fixed" right="0px" display={["none","none","block","block"]}  >
                <SideMenuRight/>

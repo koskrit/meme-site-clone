@@ -4,9 +4,11 @@ import { chakra,useColorModeValue } from '@chakra-ui/system'
 import React from 'react'
 
 function SideCard({data}) {
+  let postIdArray = data.url.split('/');
+  let id = postIdArray[postIdArray.length-1]
     return (
         <>
-        <Link shadow = "md">
+        <Link shadow = "md" href={"/post" + "?id=" + id + "&title=" + data.title }>
          <Box
           w="full"
           height ="100px"
