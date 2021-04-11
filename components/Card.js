@@ -6,10 +6,14 @@ import {
   Flex,
   useColorModeValue,
   Link,
+  Text,
 } from "@chakra-ui/react";
 
 const Card= ({title,content,upVoteCount,data,url}) => {
+  console.log(data)
   return (
+    <Link>
+    <>
     <Flex
    
       p={50}
@@ -23,11 +27,12 @@ const Card= ({title,content,upVoteCount,data,url}) => {
         shadow="md"
         bg={useColorModeValue("white", "gray.800")}
         maxW="2xl"
+        w="full"
       >
         <Image
           roundedTop="lg"
           w="full"
-          h={64}
+          h="auto"
           fit="cover"
           src={content}
           alt="Article"
@@ -42,7 +47,7 @@ const Card= ({title,content,upVoteCount,data,url}) => {
             >
               Product
             </chakra.span>
-            <Link
+            <Text
               display="block"
               color={useColorModeValue("gray.800", "white")}
               fontWeight="bold"
@@ -52,16 +57,13 @@ const Card= ({title,content,upVoteCount,data,url}) => {
               href={url}
             >
               {title}
-            </Link>
+            </Text>
             <chakra.p
               mt={2}
               fontSize="sm"
               color={useColorModeValue("gray.600", "gray.400")}
+              w="full"
             >
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Molestie
-              parturient et sem ipsum volutpat vel. Natoque sem et aliquam
-              mauris egestas quam volutpat viverra. In pretium nec senectus
-              erat. Et malesuada lobortis.
             </chakra.p>
           </Box>
 
@@ -75,14 +77,14 @@ const Card= ({title,content,upVoteCount,data,url}) => {
                   src="https://images.unsplash.com/photo-1586287011575-a23134f797f9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=48&q=60"
                   alt="Avatar"
                 />
-                <Link
+                <Text
                   mx={2}
                   fontWeight="bold"
                   color={useColorModeValue("gray.700", "gray.200")}
                   href="#"
                 >
                   
-                </Link>
+                </Text>
               </Flex>
               <chakra.span
                 mx={1}
@@ -91,11 +93,20 @@ const Card= ({title,content,upVoteCount,data,url}) => {
               >
                 {data.upVoteCount +" Likes"}
               </chakra.span>
+              <chakra.span
+                mx={1}
+                fontSize="sm"
+                color={useColorModeValue("gray.600", "gray.300")}
+              >
+                {data.commentsCount +" Comments"}
+              </chakra.span>
             </Flex>
           </Box>
         </Box>
       </Box>
     </Flex>
+    </>
+    </Link>
   );
 };
 
