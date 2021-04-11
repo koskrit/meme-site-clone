@@ -10,7 +10,8 @@ import {
 } from "@chakra-ui/react";
 
 const Card= ({title,content,upVoteCount,data,url}) => {
-  console.log(data)
+  
+  let section = data.sectionUrl.split('.com/')[1].split('/')[0]
   return (
     <Link>
     <>
@@ -88,8 +89,18 @@ const Card= ({title,content,upVoteCount,data,url}) => {
               </Flex>
               <chakra.span
                 mx={1}
+                fontSize="lg"
+                color="black"
+              >
+                {section}
+              </chakra.span>
+
+
+              <chakra.span
+                mx={1}
                 fontSize="sm"
                 color={useColorModeValue("gray.600", "gray.300")}
+                float="right"
               >
                 {data.upVoteCount +" Likes"}
               </chakra.span>
@@ -97,6 +108,7 @@ const Card= ({title,content,upVoteCount,data,url}) => {
                 mx={1}
                 fontSize="sm"
                 color={useColorModeValue("gray.600", "gray.300")}
+                float="right"
               >
                 {data.commentsCount +" Comments"}
               </chakra.span>
