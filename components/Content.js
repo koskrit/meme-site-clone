@@ -23,7 +23,7 @@ function Content() {
         <>
           <Stack spacing={6} >
           {showSpinner ?<Spinner thickness="4px" speed="0.65s" emptyColor="gray.200" color="blue.500" size="lg" ml = "45%" mt = "100px" /> : null}
-            {posts.map(item => <Card url = {item.url} key={item.id} data={item} likes = {item.likes} title = {item.title} content = {item.imageURL}/>)}
+            {posts.map((item) => <Card url = {item.url} key={item.itemId} data={item} likes = {item.likes} title = {item.title} content = {item.imageURL}/>)}
               </Stack>  
         </>
     )
