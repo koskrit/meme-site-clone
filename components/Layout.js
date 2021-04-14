@@ -1,4 +1,4 @@
-import { Text, Grid, Heading, WrapItem, Box, Flex } from "@chakra-ui/layout";
+import { Text, Grid, Heading, WrapItem, Box, Flex, Link } from "@chakra-ui/layout";
 import React from "react";
 import {
    IconButton,
@@ -13,7 +13,6 @@ import {
 } from "@chakra-ui/react";
 import { QuestionIcon, SearchIcon } from "@chakra-ui/icons";
 import SideMenuLeft from "../components/SideMenuLeft"
-import Content  from "../components/Content"
 import SideMenuRight from "./SideMenuRight";
 
 export default function Layout({ children }) {
@@ -27,9 +26,11 @@ export default function Layout({ children }) {
                m="1"
                ml="4"
             />
+            <Link href ="/" _hover="none">
             <Heading pt="2" as="h4" size="md">
                9gag
             </Heading>
+            </Link>
             <Tabs>
                <TabList display = {["none","none","none","flex"]}>
                   <Tab>One</Tab>

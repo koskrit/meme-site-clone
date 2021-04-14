@@ -6,6 +6,7 @@ import React from 'react'
 function SideCard({data}) {
   let postIdArray = data.url.split('/');
   let id = postIdArray[postIdArray.length-1]
+  console.log(data);
     return (
         <>
         <Link shadow = "md" href={"/post" + "?id=" + id + "&title=" + data.title }>
